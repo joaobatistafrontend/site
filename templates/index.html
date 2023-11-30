@@ -1,0 +1,96 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/simulador.css' %}">
+    <link rel="stylesheet" href="{% static 'css/guiaFinanceiro.css' %}">
+    <title>Menu Flexível</title>
+</head>
+<body>
+    {% block menu%}
+        <header>
+            <nav class="menu">
+                <ul>
+                    <li><a href="{% url 'index' %}">Home</a></li>
+                    <li class="submenu">
+                        <a href="#">Nosso Mercado</a>
+                        <ul>
+                            <li><a href="#">Hidrogênio Verde</a></li>
+                            <li><a href="#">Biomassa</a></li>
+                            <li><a href="#">Crédito de Carbono</a></li>
+                            <li><a href="#">Energia Solar</a></li>
+                            <li><a href="#">Energia Eólica</a></li>
+                        </ul>
+                    </li>
+                    <li class="submenu">
+                        <a href="#">Ambiente de Negócio</a>
+                        <ul>
+                            <li><a href="https://br.investing.com/crypto/currencies" target="_blank">Cotação</a></li>
+                            <li><a href="#">Ibovespa</a></li>
+                            <li><a href="#">Câmbio</a></li>
+                            <li><a href="#">Criptomoedas</a></li>
+                        </ul>
+                    </li>
+                    <li class="submenu">
+                        <a href="#">Simulador de Investimentos</a>
+                        <ul>
+                            <li><a href="#">Carteira de Ações na Bolsa</a></li>
+                            <li><a href="#">Carteira de Fundos de Investimento</a></li>
+                            <li><a href="#">Carteira de Agronegócio</a></li>
+                            <li><a href="{% url 'simulador' %}" target="_blank">Carteira de Enegias Solar e Eólica</a></li>
+                        </ul>
+                    </li>
+                    <li class="submenu">
+                        <a href="#">Simulação</a>
+                        <ul>
+                            <li><a href="#">Simuladores de Carteira de ação</a></li>
+                            <li><a href="#">Comparador de Fundos</a></li>
+                        </ul>
+                    </li>
+                    <li class="submenu">
+                        <a href="{% url 'guiaFinceiro' %}" target="_blank">Guia Financeiro</a>
+                        <ul>
+                            <li><a href="#">Tribunal de Investimentos</a></li>
+                            <li><a href="#">Curso de Captação Sustentável</a></li>
+                        </ul>
+                    </li>
+                    <li class="submenu">
+                        <a href="#">Transparência De Transações</a>
+                        <ul>
+                            <li><a href="#">Dividendos do Mês</a></li>
+                            <li><a href="#">Relatorio de Transaçoes</a></li>
+                        </ul>
+                    </li>
+                    <li class="submenu">
+                        <a href="#">Ambiente de Negócio</a>
+                        <ul>
+                            <li><a href="#">Cotação</a></li>
+                            <li><a href="#">Ibovespa</a></li>
+                            <li><a href="#">Câmbio</a></li>
+                            <li><a href="#">Criptomoedas</a></li>
+                        </ul>
+                    </li>
+                    <li class="submenu">
+                        <a href="#">Ambiente de Cyber Security</a>
+                        <ul>
+                            <li><a href="#">Cyber Segurança Blockchain</a></li>
+                            <li><a href="#">Cyber Segurança de Transações</a></li>
+                            <li><a href="#">Cyber Segurança das leis LGPD </a></li>
+                            <li><a href="#">Tutorial da Cyber Segurança</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        
+    {% endblock menu %}
+
+    
+    {% block content %} 
+
+    {% endblock content %}
+</body>
+</html>

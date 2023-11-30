@@ -1,0 +1,68 @@
+{% extends 'index.html' %}
+
+{%block content%} 
+{% load static %}
+<br><br>
+<br><br><br><br>
+<section class="carousel-section">
+     <div class="carousel">
+         <img src="{% static 'img/eolica.jpg' %}" alt="Imagem 1">
+         <img src="{% static 'img/h2.jpg' %}" alt="Imagem 2">
+         <img src="{% static 'img/placa_solar.jpg' %}" alt="Imagem 3">
+     </div>
+ </section>
+
+ <section class="options-section">
+     <div class="options-container">
+         <div class="option">
+             <img src="{% static 'img/mulheres.jpg' %}" alt="Opção 1" style="width: 130px; margin-left: 55px;">
+             <h3>Nome da Opção 1</h3>
+             <p>Texto descritivo da opção 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+             <span>Valor: R$ 100,00</span>
+         </div>
+
+         <div class="option">
+             <img src="{% static 'img/hidro.jpg' %}" alt="Opção 2">
+             <h3>Nome da Opção 2</h3>
+             <p>Texto descritivo da opção 2. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+             <span>Valor: R$ 150,00</span>
+         </div>
+
+         <div class="option">
+             <img src="{% static 'img/curso_solar.jpg' %}" alt="Opção 3">
+             <h3>Nome da Opção 3</h3>
+             <p>Texto descritivo da opção 3. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+             <span>Valor: R$ 200,00</span>
+         </div>
+         <div class="option">
+               <img src="{% static 'img/esg.jpg' %}" alt="Opção 3">
+               <h3>Nome da Opção 3</h3>
+               <p>Texto descritivo da opção 3. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+               <span>Valor: R$ 200,00</span>
+          </div>
+     </div>
+ </section>
+ <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var carrossel = document.querySelector('.carousel');
+        var imagens = carrossel.querySelectorAll('img');
+        var intervalo = 3000; // Intervalo em milissegundos (3 segundos)
+        var indexAtual = 0;
+
+        function avancarImagem() {
+            imagens[indexAtual].classList.remove('active');
+            imagens[indexAtual].style.opacity = 0;
+
+            indexAtual = (indexAtual + 1) % imagens.length;
+
+            imagens[indexAtual].classList.add('active');
+            imagens[indexAtual].style.opacity = 1;
+
+            carrossel.style.transform = 'translateX(' + (-100 * indexAtual) + '%)';
+        }
+
+        setInterval(avancarImagem, intervalo);
+    });
+</script>
+ 
+{%endblock%}

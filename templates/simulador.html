@@ -1,0 +1,55 @@
+{% extends 'index.html' %}
+
+{%block content%} 
+    <br><br>
+
+    <div class="container">
+        <h1>Simulador de Investimentos</h1>
+        <form id="investment-form">
+            <label for="initialAmount">Valor Inicial:</label>
+            <input type="number" id="initialAmount" placeholder="Digite o valor inicial" required>
+
+            <label for="monthlyContribution">Contribuição Mensal:</label>
+            <input type="number" id="monthlyContribution" placeholder="Digite a contribuição mensal" required>
+
+            <label for="investmentPeriod">Período de Investimento (em anos):</label>
+            <input type="number" id="investmentPeriod" placeholder="Digite o período de investimento" required>
+
+            <button type="button" onclick="calculateInvestment()">Calcular</button>
+
+            <div id="result" class="hidden">
+                <h2>Resultado:</h2>
+                <p id="finalAmount">O valor final do seu investimento será de: R$ 0,00</p>
+            </div>
+        </form>
+    </div>
+    <script>function calculateInvestment() {
+        const initialAmount = parseFloat(document.getElementById('initialAmount').value);
+        const monthlyContribution = parseFloat(document.getElementById('monthlyContribution').value);
+        const investmentPeriod = parseInt(document.getElementById('investmentPeriod').value);
+    
+        const monthlyInterestRate = 0.005;  // 0.5% monthly interest rate (adjust as needed)
+    
+        let totalAmount = initialAmount;
+    
+        for (let month = 1; month <= investmentPeriod * 12; month++) {
+            totalAmount = totalAmount + monthlyContribution;
+            totalAmount = totalAmount * (1 + monthlyInterestRate);
+        }
+    
+        const resultElement = document.getElementById('result');
+        const finalAmountElement = document.getElementById('finalAmount');
+    
+        // Formata o valor final como moeda brasileira (reais)
+        const formattedAmount = totalAmount.toLocaleString('pt-BR', {
+            style: 'currency',
+            currency: 'BRL'
+        });
+    
+        finalAmountElement.textContent = `O valor final do seu investimento será de: ${formattedAmount}`;
+        resultElement.classList.remove('hidden');
+    }
+    
+    </script>
+
+{%endblock%}
