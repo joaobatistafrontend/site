@@ -2,6 +2,7 @@
 
 {%block content%} 
 {% load static %}
+<link rel="stylesheet" href="{% static 'css/guiaFinanceiro.css' %}">
 <br><br>
 <br><br><br><br>
 <section class="carousel-section">
@@ -11,9 +12,7 @@
          <img src="{% static 'img/placa_solar.jpg' %}" alt="Imagem 3">
      </div>
  </section>
-<div class="mulheres"style="margin-top: 20px;">
-     <img src="{% static 'img/mulheres.jpg' %}" style="width: 450px; height: 50%; margin-top: 20px;">
-</div>
+
  
  <section class="options-section">
  
@@ -40,15 +39,39 @@
      </div>
  </section>
 
-<div class="programa" style="height: 100%;  width: 100%;background-repeat:no-repeat ; background-image: url({%static 'img/programa.jpg'%});">
-     <div class="programa-container" >   
-          <div class="programa-opcoes">
-               <img src="{% static 'img/esg.jpg' %}" alt="Opção 3">
-               <h3>Nome da Opção 3</h3>
-          </div>
-     </div>
-</div>
+ <div id="main-container" class="programa" style=" background-size: cover; background-repeat:no-repeat ; background-image: url({%static 'img/programa.jpg'%});      width: 100vw;
+ height: 100vh;
+ display: flex;
+ justify-content: space-around;
+ align-items: center;
+ background-color: #f0f0f0;">
+    <div class="sub-container
+    " style="text-align: center;
+    max-width: 420px; /* Ajuste conforme necessário */
+    height: 600px; /* Ajuste conforme necessário */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow:3px 3px 3px 3px rgba(0, 0, 0, 0.5);
+    
+    ">
+        <p><b><span>40%</span> de desconto no Programa Recompensa Credito de Carbono</b></p>
+        <img src="{% static 'img/eolica.jpg' %}" alt="Imagem 1">
+        <p> <b>Aderindo ao Programa Recompensa Credito de Carbono dos nossos Produtos tem 40% de desconto nos Nossos cursos de capacitação 
+            Aderindo ao Incentivo Mulher ESG ou indicando mulheres ganha 60% de desconto </b></p>
+        <button class="button">Botão 1</button>
+    </div>
 
+    <div class="sub-container">
+        <p> <b><span>60%</span> de desconto  no Incentivo Mulher ESG ou indicando mulheres </b></p>
+        <img src="{% static 'img/h2.jpg' %}" alt="Imagem 2">
+        <p><b> Incentivo Mulher ESG ou indicando mulheres ganha 60% de desconto nos Nossos cursos de capacitação </b></p>
+        <button class="button">Botão 2</button>
+    </div>
+</div>
 
  <script>
     document.addEventListener('DOMContentLoaded', function () {
@@ -72,5 +95,4 @@
         setInterval(avancarImagem, intervalo);
     });
 </script>
- 
 {%endblock%}

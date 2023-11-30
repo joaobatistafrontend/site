@@ -15,3 +15,5 @@ def simulador(request):
     return render(request, 'simulador.html')
 def guiaFincanceiro(request):
     return render(request, 'guiaFincanceiro.html')
+def novo_investidor(request):
+         return render(request, 'cadastroInestidores.html')

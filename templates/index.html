@@ -44,7 +44,7 @@
                         </ul>
                     </li>
                     <li class="submenu">
-                        <a href="#">Simulação</a>
+                        <a href="#">Simulação Comparativa de Fundos</a>
                         <ul>
                             <li><a href="#">Simuladores de Carteira de ação</a></li>
                             <li><a href="#">Comparador de Fundos</a></li>
@@ -65,15 +65,6 @@
                         </ul>
                     </li>
                     <li class="submenu">
-                        <a href="#">Ambiente de Negócio</a>
-                        <ul>
-                            <li><a href="#">Cotação</a></li>
-                            <li><a href="#">Ibovespa</a></li>
-                            <li><a href="#">Câmbio</a></li>
-                            <li><a href="#">Criptomoedas</a></li>
-                        </ul>
-                    </li>
-                    <li class="submenu">
                         <a href="#">Ambiente de Cyber Security</a>
                         <ul>
                             <li><a href="#">Cyber Segurança Blockchain</a></li>
@@ -82,6 +73,7 @@
                             <li><a href="#">Tutorial da Cyber Segurança</a></li>
                         </ul>
                     </li>
+                    <img src="{% static 'img/mulhe.jpg'%}" style="border-radius: 5px; width: 100px;">
                 </ul>
             </nav>
         </header>
@@ -90,7 +82,99 @@
 
     
     {% block content %} 
+    <style>
+    .body {
+        margin-top: 55px;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0px;
+        text-align: center;
+        background-color: rgb(209, 198, 198);
+        background-image :url('img/BackGroundHI.png');
+        background-size: cover;
+        background-repeat: no-repeat; 
+        min-height: 100vh; 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    h1 {
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-size: 30px;
+        color: white;
+    }
+    
+    i{
+        font-size: 60px;
+    }
+    .icones{
+        color: white;
+    }
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center; /* Centralize verticalmente */
+        text-align: center;
+        margin: 0 auto; /* Centralize horizontalmente e remova 'margin-top' */
+        background-color: rgb(0, 200, 0);
+        width: 400px;
+        height: 450px;
+        border-radius: 30px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        
+    }
+    input {
+        padding: 5px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        height: 25px;
+        width: 300px;
+        background-color: #d9d9d9;
+        margin-bottom: 50px;
+    }
+    label {
+        font-size: 11px;
+        color: white;
+        font-weight: bold;
+        margin-bottom: 5px;
+        margin-right: 230px;
+    
+    }
+    button {
+        padding: 15px 15px;
+        background-color: green;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        border-radius: 20px;
+        transition: background-color 0.3s;
+        margin-top: 5px;
+        width: 150px;
+        
+        
+    }
+    button:hover {
+        background-color: rgb(3, 76, 3);
+    }
+    </style>
+    <div class="body" style="margin-top: 15px; background-image: url({%static 'img/idro.jpg'%});">
+        <form id="login-form">
+            <div class="icones"><i class="fas fa-car"></i>  <i class="fas fa-wrench"></i> </div> 
+            <h1>Bem Vindo</h1>
+            <label for="Usuario">Usuario:</label>
+            <input type="Usuario" id="Usuario" required>
 
+            <label for="Senha">Senha:</label>
+            <input type="password" id="Senha" required>
+
+            <button type="submit">Login</button>
+            <button type="submit"  onclick="location.href='{% url 'novo_investidor' %}'">Seja Parte da Mudança ESG</button>
+
+
+        </form>
+    </div>
     {% endblock content %}
 </body>
 </html>
